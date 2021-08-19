@@ -16,19 +16,21 @@ function CreateAnimeItem({onAddClick}) {
     return (
         <>
             <div className="flex justify-between mb-3">
-                <p className="font-semibold text-2xl">AnimeItem Tracer</p>
+                <p className="font-semibold text-2xl">Anime Tracer</p>
                 <button onClick={() => setFormVisible(!isFormVisible)} className="bg-blue-400 px-2 rounded-md text-white">
                     {isFormVisible ? 'Close Form' : 'Create Anime'}
                 </button>
             </div>
             {
                 isFormVisible &&
-                <div className="mb-8">
+                <div className="mt-6 mb-6">
                     <input
                         className="shadow rounded w-full py-2 px-3 text-gray-700 mb-4"
-                        type="text" placeholder="AnimeItem Title"  value={animeName}
+                        type="text" placeholder="Anime Title"  value={animeName}
                         onKeyDown={(e) => e.key === 'Enter' && addToDatabase()}
-                        onChange={(e) => setAnimeName(e.target.value)}/>
+                        onChange={(e) => setAnimeName(e.target.value)}
+                    />
+
                     <button className="bg-red-400 w-full py-1 rounded-md text-white" onClick={() => addToDatabase()}>
                         Add to Database
                     </button>
